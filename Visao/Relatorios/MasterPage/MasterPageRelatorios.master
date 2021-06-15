@@ -1,0 +1,264 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageRelatorios.master.cs" Inherits="Relatorios_MasterPage_MasterPageRelatorios" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link id="favicon" runat="server" rel="shortcut icon" type="image/x-icon" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css' />
+    <script src="../../Scripts/JqueryUI/jquery-1.10.2.js"></script>
+    <script src="../../Scripts/JqueryUI/jquery-ui-1.10.4.custom.js"></script>
+    <script src="../../Scripts/Funcoes.js"></script>
+    <link href="../../Scripts/JqueryUI/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery.price_format.1.8.min.js"></script>
+
+    <script src="../../Scripts/Highcharts-3.0.5/js/highcharts.js"></script>
+    <script src="../../Scripts/Highcharts-3.0.5/js/modules/exporting.js"></script>
+    <script src="../../Scripts/Graficos/Barra.js"></script>
+    <script src="../../Scripts/Graficos/Pizza.js"></script>
+
+    <style type="text/css" title="currentStyle">
+        @import "../../Scripts/DataTables/media/css/demo_page.css";
+        @import "../../Scripts/DataTables/media/css/demo_table.css";
+        @import "../../Scripts/DataTables/media/css/ColReorder.css";
+
+        .lista_relatorio
+        {
+            text-decoration: none;
+            color: white !important;
+        }
+
+            .lista_relatorio:hover
+            {
+                font-weight: bold;
+                text-decoration: underline !important;
+            }
+        .separador_filtros, #mostrarEsconderFiltros{
+            background-color: #117c4a; 
+            background-color: <%= ConfiguracaoUtil.GetCorPadrao%> !important;
+        }
+        .gerarRelatorioBotao, .esconderFiltro{
+            background-color: <%= ConfiguracaoUtil.GetCorPadrao%> !important;
+        }
+        .header, .footer {
+             background: <%= ConfiguracaoUtil.GetCorPadrao%> !important;
+             border-top: <%= ConfiguracaoUtil.GetCorPadrao%> !important;
+        }
+        .ui-widget-header{
+             background: <%= ConfiguracaoUtil.GetCorPadrao%> !important;
+        }
+    </style>
+    <script type="text/javascript" language="javascript" src="../../Scripts/DataTables/media/js/jquery.dataTables.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="../../Scripts/DataTables/media/js/ColReorder.js"></script>
+    <script src="../../Scripts/DataTables/media/js/Sort.js"></script>
+
+    <script src="../../Scripts/Chosen/chosen.jquery.js"></script>
+    <link href="../../Scripts/Chosen/chosenRelatorios.css" rel="stylesheet" />
+
+    <link href="StiloRelatorio.css" rel="stylesheet" />
+
+    <title></title>
+    <script>
+        function mostrarFiltros() {
+            $("#mostrarEsconderFiltros").addClass("esconderFiltro");
+            $("#filtros_relatorio").slideDown("normal");
+        }
+
+        function adicionarDatePicker(campo) {
+            campo.datepicker({
+                changeMonth: true,
+                changeYear: true,
+                showButtonPanel: true,
+                autoSize: true,
+                showAnim: 'slideDown'
+            });
+            campo.datepicker($.datepicker.regional["pt-BR"]);
+        }
+
+        function imprimirTabela() {
+            $('canvas').each(function (i, e) {
+                var img = e.toDataURL("image/png");
+                $(e).replaceWith($('<img src="' + img + '"/>').attr({ width: $(e).attr("width"), height: $(e).attr("height"), style: $(e).attr("style") }))
+            });
+
+            if ($("#content_print").children().find('.tabela_relatorio') != null) {
+                var tituloAux = "|  ";
+                $('.tabela_relatorio').children('thead').children('tr').children('th').each(function () {
+                    tituloAux += $(this).text() + "  |  ";
+                });
+                printDiv('content_print', window.document.title);
+            } else {
+                printDiv('content_print');
+            }
+        }
+
+        function esconderFiltros() {
+            $("#mostrarEsconderFiltros").removeClass("esconderFiltro");
+            $("#filtros_relatorio").slideUp("normal");
+        }
+
+        $(document).ready(function () {
+            //Adicionar a mascara de inteiro se houver algum campo com esta classe
+            if ($('.valor_inteiro').html() != null)
+                $('.valor_inteiro').priceFormat({ prefix: '', thousandsSeparator: '', centsSeparator: '', limit: 9, centsLimit: 0 });
+            //Adicionar a mascara de número com uma casa decimal
+            if ($('.valor_numerico').html() != null)
+                $('.valor_numerico').priceFormat({ prefix: '', thousandsSeparator: '.', centsSeparator: ',', limit: 10, centsLimit: 1 });
+            //Adicionar a mascara de número com duas casas decimais
+            if ($('.valor_dinheiro').html() != null)
+                $('.valor_dinheiro').priceFormat({ prefix: '', thousandsSeparator: '.', centsSeparator: ',', limit: 10, centsLimit: 2 });
+
+            if ($('.drop_search').html() != null) {
+                $('.drop_search').chosen({ max_selected_options: 1, no_results_text: "Oops, nenhum item encontrado", allow_single_deselect: true });
+                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function () {
+                    $('.drop_search').chosen({ max_selected_options: 1, no_results_text: "Oops, nenhum item encontrado", allow_single_deselect: true });
+                });
+
+                $('.chosen-container').css('width', '100%');
+
+                $(window).resize(function () { $('.chosen-container').css('width', '100%'); });
+            }
+
+            var valorFiltros = $("#<%= hfMostrarFiltros.ClientID %>").val();
+            if (valorFiltros == null || valorFiltros == "" || valorFiltros == "T") {
+                mostrarFiltros();
+            } else {
+                esconderFiltros();
+
+                $(".tabela_relatorio").each(function () {
+                    $(this).dataTable({
+                        "sDom": 'Rlfrtip',
+                        "aaSorting": [],
+                        "bPaginate": false,
+                        "bFilter": false
+                    });
+                });
+            }
+            $("#exibirFiltrosBarra").click(function () {
+                if ($("#mostrarEsconderFiltros").hasClass("esconderFiltro")) {
+                    esconderFiltros();
+                } else {
+                    mostrarFiltros();
+                }
+            });
+
+            $("#mostrarEsconderFiltros").click(function () {
+                if ($(this).hasClass("esconderFiltro")) {
+                    esconderFiltros();
+                } else {
+                    mostrarFiltros();
+                }
+            });
+
+            $('#btn_listar_relatorios').click(function (e) {
+                e.stopPropagation();
+                $('#div_relatorios_disponiveis').toggle('slow');
+            });
+            $('body').click(function () {
+                $('#div_relatorios_disponiveis').hide();
+            });
+        });
+
+        function saveAsExcel() {
+            //Criando um elemento 'a' para suporte a nome de arquivo
+            var a = document.createElement('a');
+            //criando uma referencia a um arquivo excel de acordo com o q vai ser impresso
+            a.href = 'data:application/vnd.ms-excel, ' + escape($('#content_print').html());
+            //setando o nome do arquivo
+            a.download = window.document.title + '.xls';
+            //Chamando a função
+            a.click();
+            e.preventDefault();
+        }
+
+
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <asp:UpdatePanel runat="server" EnableViewState="true" UpdateMode="Always">
+            <ContentTemplate>
+                <asp:HiddenField ID="hfMostrarFiltros" runat="server"></asp:HiddenField>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <div id="content_header">
+            <div id="barra_info">
+                <ul style="height: 36px;">
+                    <li><a href="../../Site/Index.aspx">
+                        <asp:Image ID="imgLogoEmpresa" runat="server" ImageUrl="../../imagens/logo_amb_manager_mini.png" Style="max-height: 27px" /></a>
+                    </li>
+                    <li class="barra_separador"></li>
+                    <li class="fr" style="margin-right: 6px; padding-top: 6px;">
+                        <asp:Label ID="lblDadosUsuarioLogado" runat="server"></asp:Label>
+                    </li>
+                </ul>
+            </div>
+            <div class="header">
+                <div class="paginaTitulo">
+                    <div class="paginaTituloItem">
+                        <asp:ContentPlaceHolder ID="cphTituloRelatorio" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <div class="paginaTituloBotoes">
+                        <div class="botaoRelatorioTopo" id="btn_listar_relatorios">
+                            <img src="../../imagens/icone_relatorio_listagem_relatorios.png" title="Relatórios Disponíveis" />
+                            <div id="div_relatorios_disponiveis" style="border-radius: 5px; padding: 5px; border: 1px solid white; display: none; position: absolute; right: 3px; max-height: 400px; min-width: 100px; min-height: 100px; z-index: 900; overflow: auto; background: linear-gradient(#333,#555);">
+                                <asp:Repeater ID="rptRelatorios" runat="server">
+                                    <ItemTemplate>
+                                        <div>
+                                            <img src="../../imagens/relatorios.png" height="18px" />
+                                            <a class="labelRelatorio lista_relatorio" target="_self" href='<%#BindingCaminhoTela(Container.DataItem)%>'><%#Eval("Nome") %></a>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </div>
+                        </div>
+                        <div id="exibirFiltrosBarra" class="botaoRelatorioTopo" title="Exibir Filtros">
+                            <img src="../../imagens/icone_relatorio_filtro.png" />
+                        </div>
+                        <div class="botaoRelatorioTopo" title="Exportar para o Excel" onclick="saveAsExcel()">
+                            <img src="../../imagens/icone_relatorio_download.png" />
+                        </div>
+                        <div class="botaoRelatorioTopo" onclick="imprimirTabela();" title="Imprimir o Relatório">
+                            <img src="../../imagens/icone_relatorio_imprimir.png" />
+                        </div>
+                        <div class="botaoRelatorioTopo" title="Voltar às Preferências Originais de Impressão">
+                            <asp:ImageButton ID="ibtnResetarPreferencias" runat="server" OnClick="ibtnResetarPreferencias_Click" ImageUrl="../../imagens/icone_relatorio_refresh.png" />
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                    <div style="clear: both; height: 1px;"></div>
+
+                </div>
+            </div>
+            <div class="barra">
+                <div id="filtros_relatorio" style="display: block; padding: 20px; background: #ececea; color: #FFFFFF; font-size: 12px; font-family: Arial">
+                    <div>
+                        <asp:ContentPlaceHolder ID="cphFiltros" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+
+                <div class="separador_filtros" style="height: 4px;"></div>
+                <div id="mostrarEsconderFiltros" class="esconderFiltro">
+                    Esconder/Exibir filtros
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div id="content_print">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div class="espacoFooter"></div>
+        <div class="footer">
+            <asp:Label runat="server" ID="lblContato" />
+        </div>
+    </form>
+</body>
+</html>

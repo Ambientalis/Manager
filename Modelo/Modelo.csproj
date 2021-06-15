@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CBD30BF0-5A7F-454C-A6E8-031B05B515C4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Modelo</RootNamespace>
+    <AssemblyName>Modelo</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>C:\CONTROLS2\NHibernate 3.3\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>C:\CONTROLS2\NHibernate 3.3\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Caches.SysCache2, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=6876f2ea66c9f443, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\CONTROLS2\NHibernate 3.3\NHibernate.Caches.SysCache2.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Mapping.Attributes">
+      <HintPath>C:\CONTROLS2\NHibernate 3.3\NHibernate.Mapping.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Persistencia\Abastecimento.cs" />
+    <Compile Include="Persistencia\Arquivo.cs" />
+    <Compile Include="Persistencia\Atividade.cs" />
+    <Compile Include="Persistencia\Caixa.cs" />
+    <Compile Include="Persistencia\Cargo.cs" />
+    <Compile Include="Persistencia\ClassificacaoCliente.cs" />
+    <Compile Include="Persistencia\ClassificacaoTipoDespesa.cs" />
+    <Compile Include="Persistencia\Configuracoes.cs" />
+    <Compile Include="Persistencia\Contato.cs" />
+    <Compile Include="Persistencia\ControleViagem.cs" />
+    <Compile Include="Persistencia\Detalhamento.cs" />
+    <Compile Include="Persistencia\EmailEnviado.cs" />
+    <Compile Include="Persistencia\Fatura.cs" />
+    <Compile Include="Persistencia\FormaDePagamento.cs" />
+    <Compile Include="Persistencia\Funcao.cs" />
+    <Compile Include="Persistencia\ItemOrcamento.cs" />
+    <Compile Include="Persistencia\Menu.cs" />
+    <Compile Include="Persistencia\MovimentacaoFinanceira.cs" />
+    <Compile Include="Persistencia\Ocorrencia.cs" />
+    <Compile Include="Persistencia\Orcamento.cs" />
+    <Compile Include="Persistencia\Orgao.cs" />
+    <Compile Include="Persistencia\Origem.cs" />
+    <Compile Include="Persistencia\Parcela.cs" />
+    <Compile Include="Persistencia\Pedido.cs" />
+    <Compile Include="Persistencia\PerguntaPesquisaSatisfacao.cs" />
+    <Compile Include="Persistencia\Permissao.cs" />
+    <Compile Include="Persistencia\PesquisaSatisfacao.cs" />
+    <Compile Include="Persistencia\PreferenciaRelatorio.cs" />
+    <Compile Include="Persistencia\Receita.cs" />
+    <Compile Include="Persistencia\Reserva.cs" />
+    <Compile Include="Persistencia\RespostaPesquisaSatisfacao.cs" />
+    <Compile Include="Persistencia\Setor.cs" />
+    <Compile Include="Persistencia\SolicitacaoAdiamento.cs" />
+    <Compile Include="Persistencia\SolicitacaoAprovacao.cs" />
+    <Compile Include="Persistencia\TagPadrao.cs" />
+    <Compile Include="Persistencia\Tela.cs" />
+    <Compile Include="Persistencia\OrdemServico.cs" />
+    <Compile Include="Persistencia\TextoPadrao.cs" />
+    <Compile Include="Persistencia\TipoAtividade.cs" />
+    <Compile Include="Persistencia\TipoDespesa.cs" />
+    <Compile Include="Persistencia\TipoOcorrenciaVeiculo.cs" />
+    <Compile Include="Persistencia\TipoOrdemServico.cs" />
+    <Compile Include="Persistencia\Cidade.cs" />
+    <Compile Include="Persistencia\Cliente.cs" />
+    <Compile Include="Persistencia\Departamento.cs" />
+    <Compile Include="Persistencia\Imagem.cs" />
+    <Compile Include="Persistencia\Endereco.cs" />
+    <Compile Include="Persistencia\Pessoa.cs" />
+    <Compile Include="Persistencia\Estado.cs" />
+    <Compile Include="Persistencia\Funcionario.cs" />
+    <Compile Include="Persistencia\TipoPedido.cs" />
+    <Compile Include="Persistencia\TipoReservaVeiculo.cs" />
+    <Compile Include="Persistencia\TipoVisita.cs" />
+    <Compile Include="Persistencia\Unidade.cs" />
+    <Compile Include="Persistencia\Veiculo.cs" />
+    <Compile Include="Persistencia\Visita.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Propriedades\Abastecimento.cs" />
+    <Compile Include="Propriedades\Atividade.cs" />
+    <Compile Include="Propriedades\Caixa.cs" />
+    <Compile Include="Propriedades\Cargo.cs" />
+    <Compile Include="Propriedades\ClassificacaoCliente.cs" />
+    <Compile Include="Propriedades\ClassificacaoTipoDespesa.cs" />
+    <Compile Include="Propriedades\Configuracoes.cs" />
+    <Compile Include="Propriedades\Contato.cs" />
+    <Compile Include="Propriedades\ControleViagem.cs" />
+    <Compile Include="Propriedades\Detalhamento.cs" />
+    <Compile Include="Propriedades\EmailEnviado.cs" />
+    <Compile Include="Propriedades\Fatura.cs" />
+    <Compile Include="Propriedades\FormaDePagamento.cs" />
+    <Compile Include="Propriedades\Funcao.cs" />
+    <Compile Include="Propriedades\ItemOrcamento.cs" />
+    <Compile Include="Propriedades\LogEventosOS.cs" />
+    <Compile Include="Propriedades\Menu.cs" />
+    <Compile Include="Propriedades\MovimentacaoFinanceira.cs" />
+    <Compile Include="Propriedades\Ocorrencia.cs" />
+    <Compile Include="Propriedades\Orcamento.cs" />
+    <Compile Include="Propriedades\Orgao.cs" />
+    <Compile Include="Propriedades\Origem.cs" />
+    <Compile Include="Propriedades\Parcela.cs" />
+    <Compile Include="Propriedades\Pedido.cs" />
+    <Compile Include="Propriedades\PerguntaPesquisaSatisfacao.cs" />
+    <Compile Include="Propriedades\Permissao.cs" />
+    <Compile Include="Propriedades\PesquisaSatisfacao.cs" />
+    <Compile Include="Propriedades\PreferenciaRelatorio.cs" />
+    <Compile Include="Propriedades\Receita.cs" />
+    <Compile Include="Propriedades\Reserva.cs" />
+    <Compile Include="Propriedades\RespostaPesquisaSatisfacao.cs" />
+    <Compile Include="Propriedades\Setor.cs" />
+    <Compile Include="Propriedades\SolicitacaoAdiamento.cs" />
+    <Compile Include="Propriedades\SolicitacaoAprovacao.cs" />
+    <Compile Include="Propriedades\TagPadrao.cs" />
+    <Compile Include="Propriedades\Tela.cs" />
+    <Compile Include="Propriedades\Cliente.cs" />
+    <Compile Include="Propriedades\Departamento.cs" />
+    <Compile Include="Propriedades\Funcionario.cs" />
+    <Compile Include="Propriedades\Pessoa.cs" />
+    <Compile Include="Propriedades\OrdemServico.cs" />
+    <Compile Include="Propriedades\TextoPadrao.cs" />
+    <Compile Include="Propriedades\TipoAtividade.cs" />
+    <Compile Include="Propriedades\TipoDespesa.cs" />
+    <Compile Include="Propriedades\TipoOcorrenciaVeiculo.cs" />
+    <Compile Include="Propriedades\TipoOrdemServico.cs" />
+    <Compile Include="Propriedades\TipoPedido.cs" />
+    <Compile Include="Propriedades\TipoReservaVeiculo.cs" />
+    <Compile Include="Propriedades\TipoVisita.cs" />
+    <Compile Include="Propriedades\Unidade.cs" />
+    <Compile Include="Propriedades\Veiculo.cs" />
+    <Compile Include="Propriedades\Arquivo.cs" />
+    <Compile Include="Propriedades\Cidade.cs" />
+    <Compile Include="Propriedades\Endereco.cs" />
+    <Compile Include="Propriedades\Estado.cs" />
+    <Compile Include="Propriedades\Imagem.cs" />
+    <Compile Include="Propriedades\Visita.cs" />
+    <Compile Include="Util\CriptografiaSimples.cs" />
+    <Compile Include="Util\NumeroPorExtenso.cs" />
+    <Compile Include="Util\SqlDate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Persistencia\Persistencia.csproj">
+      <Project>{ede1bce2-0d92-4b2e-a6bc-a66079d6d5cc}</Project>
+      <Name>Persistencia</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{381BB1E7-48FC-4A43-9C09-421CF00702BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Utilitarios</RootNamespace>
+    <AssemblyName>Utilitarios</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>C:\CONTROLS2\NHibernate 3.3\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>C:\CONTROLS2\NHibernate 3.3\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Caches.SysCache2">
+      <HintPath>C:\CONTROLS2\NHibernate 3.3\NHibernate.Caches.SysCache2.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Mapping.Attributes">
+      <HintPath>C:\CONTROLS2\NHibernate 3.3\NHibernate.Mapping.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alert.cs" />
+    <Compile Include="AvisosEmail.cs" />
+    <Compile Include="Criptografia\Criptografia.cs" />
+    <Compile Include="Criptografia\ExpiredQueryStringException.cs" />
+    <Compile Include="Criptografia\InvalidQueryStringException.cs" />
+    <Compile Include="Criptografia\SecureQueryString.cs" />
+    <Compile Include="Criptografia\Seguranca.cs" />
+    <Compile Include="Email.cs" />
+    <Compile Include="ExtensionMethod\BooleanExtension.cs" />
+    <Compile Include="ExtensionMethod\CheckListExtension.cs" />
+    <Compile Include="ExtensionMethod\DataGridViewExtension.cs" />
+    <Compile Include="ExtensionMethod\DateTimeExtension.cs" />
+    <Compile Include="ExtensionMethod\DirectoryInfoExtension.cs" />
+    <Compile Include="ExtensionMethod\IEnumerableExtension.cs" />
+    <Compile Include="ExtensionMethod\IListExtension.cs" />
+    <Compile Include="ExtensionMethod\ImageExtension.cs" />
+    <Compile Include="ExtensionMethod\Int32Extension.cs" />
+    <Compile Include="ExtensionMethod\StringExtension.cs" />
+    <Compile Include="ExtensionMethod\TimeSpanExtension.cs" />
+    <Compile Include="ExtensionMethod\TreeNodeExtension.cs" />
+    <Compile Include="ExtensionMethod\TreeViewExtension.cs" />
+    <Compile Include="ExtensionMethod\TypeExtension.cs" />
+    <Compile Include="Imagens\ManipularImagens.cs" />
+    <Compile Include="Msg.cs" />
+    <Compile Include="NumeroPorExtenso.cs" />
+    <Compile Include="PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Permissoes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelatorioUtil.cs" />
+    <Compile Include="Transacao.cs" />
+    <Compile Include="Validadores.cs" />
+    <Compile Include="WebUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{cbd30bf0-5a7f-454c-a6e8-031b05b515c4}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistencia\Persistencia.csproj">
+      <Project>{ede1bce2-0d92-4b2e-a6bc-a66079d6d5cc}</Project>
+      <Name>Persistencia</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

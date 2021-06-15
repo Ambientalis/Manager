@@ -1,0 +1,54 @@
+
+.simplemodal
+{
+    background-color: #000;
+    cursor: wait;
+    opacity: 0.5;
+    z-index: 99999999;
+}
+
+.pop_up
+{
+    margin: 15px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    border: 1px solid #D8D8D8;
+    border-top: 0;
+    background: white;
+    -moz-box-shadow: 0 2px 2px #dddddd;
+    -webkit-box-shadow: 0 2px 2px #DDD;
+    
+}
+
+.pop_m20
+{
+    margin: 10px;
+}
+
+.barra_pop_up
+{
+    background: #ECECEC url("../imagens/bg_barra_branca.jpg") repeat-x left top;
+    height: 35px;
+    border: 1px solid #D8D8D8;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    line-height: 35px;
+    padding: 0 0 0 10px;
+    margin: 0;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-shadow: 0 1px 0 white;
+    font-size: 14px;
+    -moz-box-shadow: 0 0 2px #dddddd;
+    -webkit-box-shadow: 0 0 2px #DDD;
+    color: #6D0909;
+    position: relative;
+}

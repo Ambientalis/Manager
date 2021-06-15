@@ -1,0 +1,180 @@
+﻿.topo {
+    background: #F6FAFC;
+    width: 100%;
+    height: 50px;
+}
+
+.conteudo_topo {
+    padding: 10px;
+    border-top: 5px solid #689a74;
+    overflow: hidden;
+}
+
+    .conteudo_topo * {
+        font-size: 14px !important;
+        color: #778D9B;
+        text-decoration: none;
+    }
+
+    .conteudo_topo a:hover {
+        cursor: pointer;
+        color: #2ecc71;
+    }
+
+        .conteudo_topo a:hover i {
+            color: #2ecc71;
+        }
+
+    .conteudo_topo .div_logo {
+        width: 40%;
+        float: left;
+        text-align: left;
+        padding: 5px 0px 5px 0px;
+    }
+
+    .conteudo_topo .div_opcoes {
+        width: 57%;
+        float: left;
+        text-align: right;
+        padding-top: 10px;
+    }
+
+.div_menu_topo {
+    display: block !important;
+    min-height: 45px;
+    background-color: #2ecc71;
+    box-shadow: 0px 1px 0px 0px rgba(70, 145, 91, 0.8);
+    border-radius: 3px;
+    position: relative;
+    top: 30px;
+    color: #55AA6D;
+}
+
+.botao_trocar_funcao {
+    background: none;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+    .botao_trocar_funcao:hover {
+        border: 1px solid #117c4a;
+    }
+
+.container_menu {
+    background: #117c4a;
+    overflow: hidden;
+}
+
+    .container_menu .menu {
+        width: 100%;
+        padding: 0px 20px;
+        font-size: 1.2em;
+        margin-bottom: 0px;
+    }
+
+        .container_menu .menu a {
+            color: #fff;
+            display: block;
+            text-decoration: none;
+        }
+
+        .container_menu .menu li {
+            list-style: none;
+        }
+
+        .container_menu .menu > li {
+            display: inline-block;
+            height: 100%;
+            padding: 12px 20px;
+        }
+
+            .container_menu .menu > li:hover {
+                cursor: pointer;
+                background: rgba(0,0,0,0.4);
+            }
+
+            .container_menu .menu > li > ul {
+                display: none;
+                width: 23em !important;
+                position: absolute;
+                z-index: 2;
+                margin-top: 10px;
+                margin-left: -20px;
+                border-bottom: 5px solid #117c4a;
+                padding: 0px !important;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-radius: 3px !important;
+                overflow: hidden;
+                box-shadow: 0px 5px 10px rgba(0,0,0,0.8);
+                background: #f1f6f9;
+            }
+
+                .container_menu .menu > li > ul > li {
+                    background-image: none;
+                    background-color: #F1F6F9;
+                    color: #778D9B;
+                    border-bottom: 1px dashed #D9E3E8;
+                    margin: 0px !important;
+                    padding-top: 3px !important;
+                    padding-bottom: 3px !important;
+                    border-radius: 0px !important;
+                    font-weight: normal;
+                    font-size: 14px !important;
+                }
+
+                    .container_menu .menu > li > ul > li:hover {
+                        background-image: none;
+                        background-color: #778D9B !important;
+                        color: #F6FAFC !important;
+                        border-radius: 4px;
+                    }
+
+                        .container_menu .menu > li > ul > li:hover a {
+                            color: #F6FAFC !important;
+                        }
+
+                    .container_menu .menu > li > ul > li a {
+                        color: #333333;
+                        padding: 0.3em;
+                    }
+
+
+.div_escolha_funcao {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    background: #fff;
+    right: 5px;
+    padding: 5px 15px;
+    border: 1px solid #117c4a;
+    border-radius: 3px;
+    top: 40px;
+    -moz-box-shadow: 0px 5px 10px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 0px 5px 10px rgba(0,0,0,0.8);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.8);
+    border-bottom: 5px solid #117c4a;
+}
+
+    .div_escolha_funcao > div {
+        padding: 5px 10px;
+        border-bottom: 1px dashed #ccc;
+    }
+
+    .div_escolha_funcao a {
+        display: block;
+        font-size: 12px !important;
+    }
+
+
+    .div_escolha_funcao .disabled {
+        cursor: default !important;
+        opacity: .35;
+    }
+
+        .div_escolha_funcao .disabled:hover {
+            color: inherit;
+        }

@@ -1,0 +1,60 @@
+﻿body
+{
+    font-family:Arial;
+}
+
+#container_master
+{
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    padding-right: 30px;
+    background-color: #d1d0d0;
+}
+
+#container_fotos
+{
+    width: 100%;
+    height: auto;
+}
+
+.foto
+{
+    float: left;
+    display: block;
+    width: 75px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.fotoSelecionada
+{
+    border: 2px solid #ff0000;
+}
+
+#opcoes
+{
+    text-align: center;
+    clear: both;
+}
+
+#btnAdd
+{
+    width: 100px;
+}
+
+.imagem_foto
+{
+    cursor: pointer;
+    max-width: 75px;
+    max-height: 75px;
+}
+
+.texto_check
+{
+margin-bottom:7px;
+position:relative;
+font-family:Arial;
+font-size:10pt;
+margin-right:5px;
+}

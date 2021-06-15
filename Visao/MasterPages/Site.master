@@ -1,0 +1,167 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Src="../MBOX/MBOX.ascx" TagName="MBOX" TagPrefix="uc1" %>
+<%@ Register Assembly="SisWebControls" Namespace="SisWebControls" TagPrefix="cc1" %>
+<%@ Register Src="../Utilitarios/Update.ascx" TagName="Update" TagPrefix="uc2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:fb="http://ogp.me/ns/fb#">
+<head id="Head1" runat="server">
+    <link href="../Styles/Style.css" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="../Styles/Hackie7.css" />
+<![endif]-->
+    <link href="../Styles/popup_basic.css" rel="stylesheet" type="text/css" />
+    <link href="../Scripts/jQuery/css/ui-lightness/jquery-ui-1.8.20.custom.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/Validations.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/jQuery/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="../Scripts/jQuery/js/jquery-ui-1.8.20.custom.min.js" type="text/javascript"></script>
+    <script src="../Scripts/jQuery/development-bundle/ui/i18n/jquery.ui.datepicker-pt-BR.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.cycle.all.latest.js" type="text/javascript"></script>
+    <script src="../Scripts/Funcoes.js" type="text/javascript"></script>
+    <script src="../Scripts/script.js" type="text/javascript"></script>
+    <script src="../Scripts/tabs.js" type="text/javascript"></script>
+    <script src="../Scripts/mask.js" type="text/javascript"></script>
+    <script src="../Utilitarios/jquery.maskedinput-1.1.4.pack.js" type="text/javascript"></script>
+    <link href="../C2Box/Style1/colorbox.css" rel="stylesheet" type="text/css" />
+    <script src="../C2Box/jquery.colorbox-min.js" type="text/javascript"></script>
+    <script src="../C2Box/InitC2Box.js" type="text/javascript"></script>
+    <link id="favicon" runat="server" rel="shortcut icon" type="image/x-icon" />
+    <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/StyleMenu.css" rel="stylesheet" />
+    <title></title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#menu_principal li").click(function () {
+                $("#menu_principal li").removeClass("menu_ativado");
+                $("#menu_principal li ul").hide();
+                $(this).children("ul").toggle("normal");
+                $(this).toggleClass("menu_ativado");
+            });
+            marcaras();
+            $(document).click(function () {
+                $('.menu > li > ul').hide();
+                $('.div_escolha_funcao').hide();
+            });
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(endRequestHandler);
+        });
+        function endRequestHandler(sender, args) {
+            if (args.get_error() != undefined) {
+                args.set_errorHandled(true);
+                console.log(args.get_error());
+            }
+            marcaras();
+        }
+        function marcaras() {
+            $('.mascara_inteiro').unbind();
+            $('.mascara_inteiro').maskMoney({ thousands: '', decimal: ',', precision: 0 });
+
+            $('.mascara_uma_casa_decimal').unbind();
+            $('.mascara_uma_casa_decimal').maskMoney({ thousands: '', decimal: ',', precision: 1 });
+
+            $('.mascara_dinheiro').unbind();
+            $('.mascara_dinheiro').maskMoney({ thousands: '', decimal: ',', precision: 2 });
+        }
+        function openMenu(event, menu) {
+            $('.menu > li > ul').hide();
+            if ($(menu).find('ul').length > 0) {
+                $(menu).find('ul').toggle();
+                event.stopPropagation();
+            }
+        }
+        function exibirEscolhaFuncao(event) {
+            $('.div_escolha_funcao').toggle('fade');
+            event.stopPropagation();
+        }
+    </script>
+
+    <asp:PlaceHolder runat="server">
+        <style type="text/css">
+            .conteudo_topo, .div_escolha_funcao, .container_menu .menu > li > ul, .textBox100:focus, .textBox:focus {
+                border-color: <%= ConfiguracaoUtil.GetCorPadrao%>;
+            }
+            .container_menu, .barra_verde {
+                background: <%= ConfiguracaoUtil.GetCorPadrao%>;
+            }
+            .conteudo_topo a:hover, .conteudo_topo a:hover i{
+                color: <%= ConfiguracaoUtil.GetCorPadrao%>;
+            }
+            .textBox100:focus, .textBox:focus, .dropDownList:focus, .dropDownListAuto:focus, .dropDownList100:focus, .dropDownListPag:focus {
+                border-color: <%= ConfiguracaoUtil.GetCorPadrao%>;
+                box-shadow: 0 0 3px <%= ConfiguracaoUtil.GetCorPadrao%>;
+            }
+            textarea:focus{
+                outline-color: <%= ConfiguracaoUtil.GetCorPadrao%>;
+            }
+        </style>
+    </asp:PlaceHolder>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+        <div style="display: none;">
+            <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true">
+            </asp:ToolkitScriptManager>
+            <cc1:C2MessageBox ID="C2MessageBox1" runat="server" />
+        </div>
+        <div class="topo">
+            <div class="conteudo_topo">
+                <div style="float: left; width: 16%">
+                    <a title="Ir para a página inicial do sistema" href="../Site/Index.aspx">
+                        <asp:Image runat="server" ID="imgLogomarca" Style="max-height: 30px;" />
+                    </a>
+                </div>
+                <div style="float: left; width: 49%; padding-top: 5px; padding-right: 10px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                    <asp:Label ID="lblDadosUsuarioLogado" runat="server"></asp:Label>
+                </div>
+                <div style="float: left; width: 33.3%; padding-top: 5px; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                    <span runat="server" id="separador_funcao" class="fa fa-ellipsis-h fa-rotate-90" style="font-size: 11pt"></span>&nbsp;
+                    <a runat="server" id="btnTrocarFuncao" onclick="exibirEscolhaFuncao(event)">
+                        <i class="fa fa-refresh"></i>&nbsp;Trocar função
+                    </a>
+                    <span class="fa fa-ellipsis-h fa-rotate-90" style="font-size: 11pt"></span>&nbsp;
+                     <asp:LinkButton ID="btnLogout" OnClientClick="if(!confirm('Deseja realmente sair do sistema?'))return false" PostBackUrl="../Account/Login.aspx" runat="server">
+                        <i class="fa fa-sign-out"></i>&nbsp;Sair do sistema
+                     </asp:LinkButton>
+                </div>
+                <div class="div_escolha_funcao">
+                    <asp:Repeater runat="server" ID="rptFuncoesFuncionario">
+                        <ItemTemplate>
+                            <div>
+                                <asp:LinkButton ID="btnTrocarFuncao" runat="server" CommandArgument='<%# Eval("Id") %>' CssClass='<%# (this.FuncaoLogada.Id != Eval("Id").ToString().ToInt32())?"":"disabled" %>' OnClick="btnTrocarFuncao_Click">
+                                   <%# Eval("GetDescricao") %>
+                                </asp:LinkButton>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
+            </div>
+        </div>
+        <div class="container_menu">
+            <asp:Label ID="lblmenuDinamico" runat="server" EnableViewState="false"></asp:Label>
+            <cc1:C2MessageBox ID="C2MessageBox2" runat="server" />
+        </div>
+        <div id="container">
+            <div class="barra barra_verde">
+                <asp:ContentPlaceHolder ID="titulo" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="cph">
+                <asp:ContentPlaceHolder ID="content" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div id="footer">
+            <div style="text-align: center; margin-top: 20px; font-family: Tahoma; font-size: 11px; color: black; margin-bottom: 20px;">
+                <asp:Label runat="server" ID="lblContato" />
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="popups" runat="server">
+        </asp:ContentPlaceHolder>
+        <uc1:MBOX ID="MBOX1" runat="server" />
+        <uc2:Update ID="Update1" runat="server" />
+    </form>
+</body>
+</html>

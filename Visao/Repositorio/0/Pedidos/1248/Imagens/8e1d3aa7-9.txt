@@ -1,0 +1,4 @@
+ - Switch - Para campos booleanos
+ - TouchSpin - Para valores
+ - ScrollUp - Para voltar ao topo de páginas em páginas muito grandes
+ - SocialShare - Para compartilhamento de informações nas redes sociais

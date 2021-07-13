@@ -16,7 +16,7 @@ public partial class Atividades_CadastroDeAtividade : PageBase
     {
         get
         {
-            return (Funcionario)Session["usuario_logado"];
+            return (Funcionario)Session["usuario_logado"]; 
         }
     }
 

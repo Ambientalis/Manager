@@ -42,7 +42,8 @@ namespace Persistencia.Fabrica
                     _objConf.Configure(ConfigurationManager.AppSettings["pathAplicacao"].ToString() + "/App_Data/ConfiguracoesBanco/" + idConfig.ToString() + ".xml");
 
                 string connString = _objConf.GetProperty("connection.connection_string");
-                _objConf.SetProperty("connection.connection_string", PersistenciaUtil.Decrypt(connString, true));
+                _objConf.SetProperty("connection.connection_string", connString);
+                //_objConf.SetProperty("connection.connection_string", PersistenciaUtil.Decrypt(connString, true));
                 _objConf.AddInputStream(NHibernate.Mapping.Attributes.HbmSerializer.Default.Serialize(Assembly.Load("Modelo")));
 
 

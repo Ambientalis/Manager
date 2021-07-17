@@ -32,3 +32,9 @@ E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Persistencia\obj\Debug\Persisten
 E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
 E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Persistencia\obj\Debug\Persistencia.dll
 E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Persistencia\obj\Debug\Persistencia.pdb
+C:\Rafael\Freela\Manager\Persistencia\bin\Debug\Persistencia.dll
+C:\Rafael\Freela\Manager\Persistencia\bin\Debug\Persistencia.pdb
+C:\Rafael\Freela\Manager\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Rafael\Freela\Manager\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+C:\Rafael\Freela\Manager\Persistencia\obj\Debug\Persistencia.dll
+C:\Rafael\Freela\Manager\Persistencia\obj\Debug\Persistencia.pdb

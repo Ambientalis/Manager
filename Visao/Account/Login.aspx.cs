@@ -24,7 +24,8 @@ public partial class Site_Login : System.Web.UI.Page
         if (!Request.Browser.Crawler && !IsPostBack)
             try
             {
-                String urlOnline = "Data Source=162.214.71.37;Integrated Security=False;User ID=manager;Password=tHaFtlG&&9[hEa4;Initial Catalog=ambientalis; Max Pool Size=1000;";
+                //String urlOnline = "Data Source=162.214.71.37;Integrated Security=False;User ID=manager;Password=tHaFtlG&&9[hEa4;Initial Catalog=ambientalis; Max Pool Size=1000;";
+                String urlOnline = "Data Source=51.161.1.128;Integrated Security=False;User ID=dev;Password=f5p8L3e@;Initial Catalog=ambientalis; Max Pool Size=1000;";
                 urlOnline = Persistencia.Utilitarios.PersistenciaUtil.Encrypt(urlOnline, true);
 
 

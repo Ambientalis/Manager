@@ -39,3 +39,12 @@ E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Modelo\obj\Debug\Modelo.csproj.C
 E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Modelo\obj\Debug\Modelo.csproj.CopyComplete
 E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Modelo\obj\Debug\Modelo.dll
 E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Modelo\obj\Debug\Modelo.pdb
+C:\Rafael\Freela\Manager\Modelo\bin\Debug\Modelo.dll
+C:\Rafael\Freela\Manager\Modelo\bin\Debug\Modelo.pdb
+C:\Rafael\Freela\Manager\Modelo\bin\Debug\Persistencia.dll
+C:\Rafael\Freela\Manager\Modelo\bin\Debug\Persistencia.pdb
+C:\Rafael\Freela\Manager\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache
+C:\Rafael\Freela\Manager\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Rafael\Freela\Manager\Modelo\obj\Debug\Modelo.csproj.CopyComplete
+C:\Rafael\Freela\Manager\Modelo\obj\Debug\Modelo.dll
+C:\Rafael\Freela\Manager\Modelo\obj\Debug\Modelo.pdb

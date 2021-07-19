@@ -2,6 +2,8 @@
 
 using System;
 using System.Web;
+using Persistencia.Services;
+
 
 public class HandlerArquivosOS : IHttpHandler, System.Web.SessionState.IRequiresSessionState
 {
@@ -48,7 +50,7 @@ public class HandlerArquivosOS : IHttpHandler, System.Web.SessionState.IRequires
         if (HttpContext.Current.Session["objeto_upload_OS"].ToString() == "os")
             subPath = HttpContext.Current.Session["idConfig"].ToString() + "/Ordens/" + HttpContext.Current.Session["id_os_arquivos"].ToString() + "/Imagens/";
 
-        string path = System.Configuration.ConfigurationManager.AppSettings["pathAplicacao"].ToString() + "/Repositorio/" + subPath;
+        string path = PathApplication.pathApplication + "/Repositorio/" + subPath;
 
         do
         {

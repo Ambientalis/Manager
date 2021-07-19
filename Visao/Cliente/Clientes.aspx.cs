@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlTypes;
 using System.IO;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using Modelo;
+using Persistencia.Services;
 using SisWebControls;
 using Utilitarios;
 
@@ -188,7 +186,7 @@ public partial class Cliente_Clientes : PageBase
             IList<string> clientes = new List<string>();
 
             string nome = "";
-            string path = System.Configuration.ConfigurationManager.AppSettings["pathAplicacao"].ToString() + "/Repositorio/" +
+            string path = PathApplication.pathApplication + "/Repositorio/" +
          HttpContext.Current.Session["idConfig"].ToString() + "/Clientes/" + "Importacoes/";
             do
             {

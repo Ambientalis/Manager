@@ -2,6 +2,7 @@
 
 using System;
 using System.Web;
+using Persistencia.Services;
 
 public class HandlerArquivosVisita : IHttpHandler, System.Web.SessionState.IRequiresSessionState
 {
@@ -31,7 +32,7 @@ public class HandlerArquivosVisita : IHttpHandler, System.Web.SessionState.IRequ
         string nome = "";
         string subPath = HttpContext.Current.Session["idConfig"].ToString() + "/Visitas/" + HttpContext.Current.Session["id_visita_arquivos"].ToString() + "/Imagens/";
 
-        string path = System.Configuration.ConfigurationManager.AppSettings["pathAplicacao"].ToString() + "/Repositorio/" + subPath;
+        string path = PathApplication.pathApplication + "/Repositorio/" + subPath;
 
         do
         {

@@ -2,6 +2,8 @@
 
 using System;
 using System.Web;
+using Persistencia.Services;
+
 
 public class HandlerFuncionario : IHttpHandler, System.Web.SessionState.IRequiresSessionState  
 {    
@@ -29,7 +31,7 @@ public class HandlerFuncionario : IHttpHandler, System.Web.SessionState.IRequire
         string extensao = arquivoPostado.FileName.Substring(arquivoPostado.FileName.LastIndexOf('.'));
         string nome = "";
         string subPath = HttpContext.Current.Session["idConfig"].ToString() + "/Funcionarios/" + HttpContext.Current.Session["idFuncionario"].ToString() + "/Imagens/";
-        string path = System.Configuration.ConfigurationManager.AppSettings["pathAplicacao"].ToString() + "/Repositorio/" + subPath;
+        string path = PathApplication.pathApplication + "/Repositorio/" + subPath;
 
         do
         {

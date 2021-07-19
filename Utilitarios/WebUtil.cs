@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Web;
 using Modelo;
+using Persistencia.Services;
 
 namespace Utilitarios
 {
@@ -392,8 +393,8 @@ namespace Utilitarios
         {
             get
             {
-                if (ConfigurationManager.AppSettings["pathAplicacao"] != null)
-                    return ConfigurationManager.AppSettings["pathAplicacao"].ToString();
+                if (PathApplication.pathApplication != null)
+                    return PathApplication.pathApplication;
                 else
                     return "--";
             }
@@ -420,7 +421,7 @@ namespace Utilitarios
         {
             get
             {
-                return "file:///" + GetPathAplicacao + "/imagens/logo_relatorio.png";
+                return "file:///" + PathApplication.pathApplication + "/imagens/logo_relatorio.png";
             }
         }
 

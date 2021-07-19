@@ -2,6 +2,8 @@
 
 using System;
 using System.Web;
+using Persistencia.Services;
+   
 
 public class HandlerArquivosPedidos : IHttpHandler, System.Web.SessionState.IRequiresSessionState
 {
@@ -30,7 +32,7 @@ public class HandlerArquivosPedidos : IHttpHandler, System.Web.SessionState.IReq
         string extensao = arquivoPostado.FileName.Substring(arquivoPostado.FileName.LastIndexOf('.'));
         string nome = "";
         string subPath = HttpContext.Current.Session["idConfig"].ToString() + (HttpContext.Current.Session["objeto_upload_pedido"].ToString() == "os" ? "/Ordens/" + HttpContext.Current.Session["id_os_arquivos"].ToString() : "/Pedidos/" + HttpContext.Current.Session["id_pedido_arquivos"].ToString()) + "/Imagens/";
-        string path = System.Configuration.ConfigurationManager.AppSettings["pathAplicacao"].ToString() + "/Repositorio/" + subPath;
+        string path = PathApplication.pathApplication + "/Repositorio/" + subPath;
 
         do
         {

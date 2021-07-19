@@ -39,7 +39,14 @@ namespace Persistencia.Fabrica
                 _objConf = new NHibernate.Cfg.Configuration();
                 //verifica se a a aplicaçao é web
                 if (HttpContext.Current != null)
-                    _objConf.Configure(ConfigurationManager.AppSettings["pathAplicacao"].ToString() + "/App_Data/ConfiguracoesBanco/" + idConfig.ToString() + ".xml");
+
+                {
+
+                    String path = System.AppDomain.CurrentDomain.BaseDirectory.ToString();
+
+                    _objConf.Configure(path + "/App_Data/ConfiguracoesBanco/" + idConfig.ToString() + ".xml");
+
+                }
 
                 string connString = _objConf.GetProperty("connection.connection_string");
                 _objConf.SetProperty("connection.connection_string", connString);

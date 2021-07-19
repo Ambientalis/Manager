@@ -98,6 +98,7 @@
     <Compile Include="Filtros\IFiltroOu.cs" />
     <Compile Include="Modelo\ObjetoBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PathApplication.cs" />
     <Compile Include="Utilitarios\PersistenciaUtil.cs" />
   </ItemGroup>
   <ItemGroup>

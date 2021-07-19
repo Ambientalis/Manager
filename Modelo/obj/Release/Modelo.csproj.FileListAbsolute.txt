@@ -43,3 +43,12 @@ E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Modelo\obj\Release\Modelo.csproj
 E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Modelo\obj\Release\Modelo.csproj.CopyComplete
 E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Modelo\obj\Release\Modelo.dll
 E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Modelo\obj\Release\Modelo.pdb
+C:\source\Manager\Modelo\bin\Release\Modelo.dll
+C:\source\Manager\Modelo\bin\Release\Modelo.pdb
+C:\source\Manager\Modelo\bin\Release\Persistencia.dll
+C:\source\Manager\Modelo\bin\Release\Persistencia.pdb
+C:\source\Manager\Modelo\obj\Release\Modelo.csprojAssemblyReference.cache
+C:\source\Manager\Modelo\obj\Release\Modelo.csproj.CoreCompileInputs.cache
+C:\source\Manager\Modelo\obj\Release\Modelo.csproj.CopyComplete
+C:\source\Manager\Modelo\obj\Release\Modelo.dll
+C:\source\Manager\Modelo\obj\Release\Modelo.pdb

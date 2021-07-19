@@ -63,3 +63,14 @@ E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Utilitarios\obj\Release\Utilitar
 E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Utilitarios\obj\Release\Utilitarios.csproj.CopyComplete
 E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Utilitarios\obj\Release\Utilitarios.dll
 E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Utilitarios\obj\Release\Utilitarios.pdb
+C:\source\Manager\Utilitarios\bin\Release\Utilitarios.dll
+C:\source\Manager\Utilitarios\bin\Release\Utilitarios.pdb
+C:\source\Manager\Utilitarios\bin\Release\Modelo.dll
+C:\source\Manager\Utilitarios\bin\Release\Persistencia.dll
+C:\source\Manager\Utilitarios\bin\Release\Modelo.pdb
+C:\source\Manager\Utilitarios\bin\Release\Persistencia.pdb
+C:\source\Manager\Utilitarios\obj\Release\Utilitarios.csprojAssemblyReference.cache
+C:\source\Manager\Utilitarios\obj\Release\Utilitarios.csproj.CoreCompileInputs.cache
+C:\source\Manager\Utilitarios\obj\Release\Utilitarios.csproj.CopyComplete
+C:\source\Manager\Utilitarios\obj\Release\Utilitarios.dll
+C:\source\Manager\Utilitarios\obj\Release\Utilitarios.pdb

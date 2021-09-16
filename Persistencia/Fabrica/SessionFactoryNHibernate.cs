@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Web;
 using System.Configuration;
 using Persistencia.Utilitarios;
+using NHibernate.Mapping.Attributes;
 
 namespace Persistencia.Fabrica
 {
@@ -51,12 +52,15 @@ namespace Persistencia.Fabrica
                 string connString = _objConf.GetProperty("connection.connection_string");
                 _objConf.SetProperty("connection.connection_string", connString);
                 //_objConf.SetProperty("connection.connection_string", PersistenciaUtil.Decrypt(connString, true));
+
+                HbmSerializer.Default.Validate = true;
+
                 _objConf.AddInputStream(NHibernate.Mapping.Attributes.HbmSerializer.Default.Serialize(Assembly.Load("Modelo")));
 
 
                 ////########################################################################################################
                 ////########################################################################################################
-                //CriarBanco.CriarBancoComNHibernate(ref _objConf, idConfig);
+                //  CriarBanco.CriarBancoComNHibernate(ref _objConf, idConfig);
                 ////########################################################################################################
                 ////########################################################################################################
                 ////##################### IMPORTANTE: LEMBRE DE COMENTAR E DAR REBUILD #####################################

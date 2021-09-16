@@ -199,12 +199,12 @@ namespace Persistencia.DAO
             ISession sessao = NHibernateSessionManager.Instance.ContextSession;
             try
             {
-                o = (T)this.VerificarMultiEmpresa(o);
+                //o = (T)this.VerificarMultiEmpresa(o);
                 ICriteria criteria = sessao.CreateCriteria(o.GetType());
 
                 //Para adicionar ao menos o filtro de multiEmpresa
-                foreach (Filtro filtro in o.ListaFiltros)
-                    filtro.adicionarFiltro(ref criteria);
+                //foreach (Filtro filtro in o.ListaFiltros)
+                //    filtro.adicionarFiltro(ref criteria);
 
                 return criteria.List<T>();
             }

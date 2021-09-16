@@ -38,3 +38,10 @@ C:\Rafael\Freela\Manager\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileI
 C:\Rafael\Freela\Manager\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
 C:\Rafael\Freela\Manager\Persistencia\obj\Debug\Persistencia.dll
 C:\Rafael\Freela\Manager\Persistencia\obj\Debug\Persistencia.pdb
+C:\source\Manager\Persistencia\bin\Debug\Persistencia.dll
+C:\source\Manager\Persistencia\bin\Debug\Persistencia.pdb
+C:\source\Manager\Persistencia\obj\Debug\Persistencia.csprojAssemblyReference.cache
+C:\source\Manager\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\source\Manager\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+C:\source\Manager\Persistencia\obj\Debug\Persistencia.dll
+C:\source\Manager\Persistencia\obj\Debug\Persistencia.pdb

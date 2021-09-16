@@ -1,7 +1,9 @@
 ﻿using Persistencia.Fabrica;
 using Persistencia.Filtros;
 using Persistencia.Modelo;
+using Persistencia.Utilitarios;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -206,6 +208,29 @@ namespace Modelo
             get
             {
                 return Orcamento.RECUSADO.Equals(this.status);
+            }
+        }
+
+        public static IList GetConsultarOrcamentosCancelados()
+        {
+            String sql = "SELECT id,  status   FROM [ambientalis].[dbo].[orcamentos]   where status = 'Cancelado'";
+            FabricaDAONHibernateBase fabrica = new FabricaDAONHibernateBase();
+            IList retorno = fabrica.GetDAOBase().ConsultaSQL(sql);
+            return retorno;
+        }
+
+
+        public static void PostCancellStatus()
+        {
+            try
+            {
+                String sql = $"update  FROM [ambientalis].[dbo].[orcamentos] set  status ='{StatusOrcamento.StatuArquivado}'  where status = '{StatusOrcamento.StatuCancelado}'";
+                FabricaDAONHibernateBase fabrica = new FabricaDAONHibernateBase();
+                fabrica.GetDAOBase().ExecutarComandoSql(sql);
+            }
+            catch (Exception ex)
+            {
+               throw new Exception(ex.Message);
             }
         }
     }

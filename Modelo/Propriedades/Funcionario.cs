@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NHibernate.Mapping.Attributes;
+using Persistencia.Fabrica;
+using Persistencia.Filtros;
 
 namespace Modelo
 {
@@ -47,6 +49,27 @@ namespace Modelo
         private IList<Atividade> atividades;
         private IList<Permissao> permissoes;
         private IList<Veiculo> veiculos;
+
+
+        public static Funcionario GetConfiguracoesSistema()
+        {
+
+            FabricaDAONHibernateBase fabrica = new FabricaDAONHibernateBase();
+
+            Funcionario configx = new Funcionario();
+
+
+            var xxx = fabrica.GetDAOBase().ConsultarTodos<Funcionario>(configx);
+
+
+            Funcionario config = new Funcionario();
+            var x = new FabricaDAONHibernateBase().GetDAOBase().ConsultarTodos<Funcionario>(config);
+            if (config == null)
+                return new Funcionario().Salvar();
+            return config;
+        }
+
+
         private IList<Reserva> reservas;
 
         private string emailCorporativo;

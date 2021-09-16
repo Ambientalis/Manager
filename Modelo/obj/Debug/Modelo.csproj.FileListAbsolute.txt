@@ -48,3 +48,12 @@ C:\Rafael\Freela\Manager\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
 C:\Rafael\Freela\Manager\Modelo\obj\Debug\Modelo.csproj.CopyComplete
 C:\Rafael\Freela\Manager\Modelo\obj\Debug\Modelo.dll
 C:\Rafael\Freela\Manager\Modelo\obj\Debug\Modelo.pdb
+C:\source\Manager\Modelo\bin\Debug\Modelo.dll
+C:\source\Manager\Modelo\bin\Debug\Modelo.pdb
+C:\source\Manager\Modelo\bin\Debug\Persistencia.dll
+C:\source\Manager\Modelo\bin\Debug\Persistencia.pdb
+C:\source\Manager\Modelo\obj\Debug\Modelo.csprojAssemblyReference.cache
+C:\source\Manager\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\source\Manager\Modelo\obj\Debug\Modelo.csproj.CopyComplete
+C:\source\Manager\Modelo\obj\Debug\Modelo.dll
+C:\source\Manager\Modelo\obj\Debug\Modelo.pdb

@@ -12,6 +12,8 @@ using Modelo;
 using Utilitarios.Criptografia;
 using Persistencia.Fabrica;
 using Modelo.Util;
+using Persistencia.Filtros;
+using NHibernate;
 
 public partial class Site_Login : System.Web.UI.Page
 {
@@ -36,7 +38,11 @@ public partial class Site_Login : System.Web.UI.Page
                 ConfiguracaoUtil.RefreshConfig();
                 imgLogo.ImageUrl = ConfiguracaoUtil.GetLinkLogomarca;
 
+
+     
+
                 string login = (Utilitarios.Criptografia.Seguranca.RecuperarParametro("login", this.Request));
+
 
                 if (login.IsNotNullOrEmpty())
                     tbxLogin.Text = login;
@@ -52,6 +58,8 @@ public partial class Site_Login : System.Web.UI.Page
                 C2MessageBox.Show(msg);
             }
     }
+
+ 
 
     #region ______________________ Eventos ______________________
 

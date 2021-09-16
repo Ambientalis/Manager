@@ -39,6 +39,7 @@ E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Persistencia\obj\Release\Persist
 E:\C2TI\AmbientalisManagerSVOnline\CódigoFonte\Persistencia\obj\Release\Persistencia.pdb
 C:\source\Manager\Persistencia\bin\Release\Persistencia.dll
 C:\source\Manager\Persistencia\bin\Release\Persistencia.pdb
+C:\source\Manager\Persistencia\obj\Release\Persistencia.csprojAssemblyReference.cache
 C:\source\Manager\Persistencia\obj\Release\Persistencia.csproj.CoreCompileInputs.cache
 C:\source\Manager\Persistencia\obj\Release\Persistencia.csproj.CopyComplete
 C:\source\Manager\Persistencia\obj\Release\Persistencia.dll

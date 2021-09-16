@@ -70,3 +70,14 @@ C:\Rafael\Freela\Manager\Utilitarios\obj\Debug\Utilitarios.csproj.CoreCompileInp
 C:\Rafael\Freela\Manager\Utilitarios\obj\Debug\Utilitarios.csproj.CopyComplete
 C:\Rafael\Freela\Manager\Utilitarios\obj\Debug\Utilitarios.dll
 C:\Rafael\Freela\Manager\Utilitarios\obj\Debug\Utilitarios.pdb
+C:\source\Manager\Utilitarios\bin\Debug\Utilitarios.dll
+C:\source\Manager\Utilitarios\bin\Debug\Utilitarios.pdb
+C:\source\Manager\Utilitarios\bin\Debug\Modelo.dll
+C:\source\Manager\Utilitarios\bin\Debug\Persistencia.dll
+C:\source\Manager\Utilitarios\bin\Debug\Modelo.pdb
+C:\source\Manager\Utilitarios\bin\Debug\Persistencia.pdb
+C:\source\Manager\Utilitarios\obj\Debug\Utilitarios.csprojAssemblyReference.cache
+C:\source\Manager\Utilitarios\obj\Debug\Utilitarios.csproj.CoreCompileInputs.cache
+C:\source\Manager\Utilitarios\obj\Debug\Utilitarios.csproj.CopyComplete
+C:\source\Manager\Utilitarios\obj\Debug\Utilitarios.dll
+C:\source\Manager\Utilitarios\obj\Debug\Utilitarios.pdb

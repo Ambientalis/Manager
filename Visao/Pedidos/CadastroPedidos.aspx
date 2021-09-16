@@ -224,6 +224,19 @@
                                     </asp:CalendarExtender>
                                 </div>
                             </div>
+
+                            <div>
+                                <div class="label_form">
+                                    Tipo Pagamento<span>*:</span>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator25" runat="server" ControlToValidate="ddlTipoPagamento" InitialValue="0" CssClass="RequireFieldValidator"
+                                        ErrorMessage="- Tipo" ValidationGroup="vlgPedido">*obrigatório!</asp:RequiredFieldValidator>
+                                </div>
+                                <div class="campo_form">
+                                    <asp:DropDownList ID="DropDownList1" CssClass="dropDownList100" runat="server">
+                                    </asp:DropDownList>
+                                </div>
+                            </div>
+
                             <div>
                                 <div class="label_form">
                                     Tipo<span>*:</span>
@@ -304,7 +317,7 @@
                                 <div class="close" onclick="minimizar('ordens_container');">
                                 </div>
                             </div>
-                            <div id="ordens_container" class="cph" style="margin-bottom:10px">
+                            <div id="ordens_container" class="cph" style="margin-bottom: 10px">
                                 <div style="max-height: 300px; overflow-y: auto">
                                     <asp:GridView ID="gdvOrdensServico" runat="server" AutoGenerateColumns="False" BorderStyle="None" BorderWidth="0px" CssClass="grid" DataKeyNames="Id" EnableModelValidation="True" OnPageIndexChanging="gdvOrdensServico_PageIndexChanging" OnPreRender="gdvOrdensServico_PreRender" OnRowDeleting="gdvOrdensServico_RowDeleting" PageSize="5">
                                         <Columns>

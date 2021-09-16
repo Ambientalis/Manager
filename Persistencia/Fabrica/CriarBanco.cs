@@ -11,10 +11,11 @@ namespace Persistencia.Fabrica
         {
             //CRIAR BANCO AUTOMATICAMENTE
 
+            string x = "C:\\source\\Manager\\Visao";
 
-            StreamReader str = new StreamReader(PathApplication.pathApplication + "/App_Data/ConfiguracoesBanco/" + idConfig.ToString() + ".xml");
+            StreamReader str = new StreamReader(x + "/App_Data/ConfiguracoesBanco/" + idConfig.ToString() + ".xml");
             string xml = str.ReadToEnd();
-            if (xml.Contains("Source=aragom;") || xml.Contains("Server=aragom;"))
+            if (xml.Contains("Source=ambientalis;") || xml.Contains("Server=51.161.1.128;"))
                 new SchemaExport(_objConf).SetOutputFile(PathApplication.pathApplication + "/create_schema.sql").Execute(true, false, false);
         }
     }

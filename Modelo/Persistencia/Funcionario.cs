@@ -39,6 +39,8 @@ namespace Modelo
                 return fabrica.GetDAOBase().ConsultarPorID<Funcionario>(this);
         }
 
+
+
         /// <summary>
         /// Salva a corrente instância em banco
         /// </summary>

@@ -1,21 +1,18 @@
 ﻿using Modelo;
+using Persistencia.Fabrica;
 using Quartz;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 /// <summary>
 /// Descrição resumida de ArquivamentoPedido
 /// </summary>
-public class ArquivamentoPedido : IJob
+public class ArquivamentoOrcamento : IJob
 {
     public void Execute(IJobExecutionContext context)
     {
         try
         {
-
-            Pedido.PostCancellStatus();
+            Orcamento.PostCancellStatus();
         }
         catch (Exception ex)
         {
@@ -25,4 +22,3 @@ public class ArquivamentoPedido : IJob
         ///Obs: Deverá ser implementado uma rotina que arquive automaticamente todos os pedidos que forem cancelados.
     }
 }
-

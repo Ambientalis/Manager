@@ -1,12 +1,12 @@
 ﻿using Persistencia.Fabrica;
 using Persistencia.Filtros;
 using Persistencia.Modelo;
-using Persistencia.Utilitarios;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Persistencia.Utilitarios;
+
 
 namespace Modelo
 {
@@ -224,7 +224,7 @@ namespace Modelo
         {
             try
             {
-                String sql = $"update  FROM [ambientalis].[dbo].[orcamentos] set  status ='{StatusOrcamento.StatuArquivado}'  where status = '{StatusOrcamento.StatuCancelado}'";
+                String sql = $"update  FROM [ambientalis].[dbo].[orcamentos] set  status ='Arquivar'  where status = 'Cancelado'";
                 FabricaDAONHibernateBase fabrica = new FabricaDAONHibernateBase();
                 fabrica.GetDAOBase().ExecutarComandoSql(sql);
             }

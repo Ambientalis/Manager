@@ -5,6 +5,7 @@ using System.Text;
 using Persistencia.Fabrica;
 using Persistencia.Filtros;
 using Persistencia.Modelo;
+using Persistencia.Utilitarios;
 
 namespace Modelo
 {
@@ -596,6 +597,20 @@ namespace Modelo
                     return "Todas";
                 Unidade uni = new Unidade(this.Emp).ConsultarPorId();
                 return (uni != null ? uni.Descricao : null);
+            }
+        }
+
+        public static void PostCancellStatus()
+        {
+            try
+            {
+                String sql = $"update  FROM [ambientalis].[dbo].[pedido] set  status ='Arquivar'  where status = 'Cancelado'";
+                FabricaDAONHibernateBase fabrica = new FabricaDAONHibernateBase();
+                fabrica.GetDAOBase().ExecutarComandoSql(sql);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
     }

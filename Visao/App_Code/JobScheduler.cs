@@ -11,7 +11,10 @@ public class JobScheduler
         IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();
         scheduler.Start();
 
-        IJobDetail job = JobBuilder.Create<ArquivamentoPedido>().Build();
+        IJobDetail jobOrcamento = JobBuilder.Create<ArquivamentoOrcamento>().Build();
+
+        IJobDetail jobPedido = JobBuilder.Create<ArquivamentoPedido>().Build();
+
 
         ITrigger trigger = TriggerBuilder.Create()
               .WithIdentity("trigger1", "group1")
@@ -22,7 +25,9 @@ public class JobScheduler
               .Build();
 
 
-        scheduler.ScheduleJob(job, trigger);
+        scheduler.ScheduleJob(jobOrcamento, trigger);
+        scheduler.ScheduleJob(jobPedido, trigger);
+
     }
 
 }

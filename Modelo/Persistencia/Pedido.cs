@@ -573,6 +573,7 @@ namespace Modelo
             }
         }
 
+
         public virtual string ProximoCodigo()
         {
             Pedido pedido = new Pedido();

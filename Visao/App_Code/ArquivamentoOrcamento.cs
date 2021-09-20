@@ -20,13 +20,19 @@ using System.Drawing;
 /// Descrição resumida de ArquivamentoPedido
 /// </summary>
 public class ArquivamentoOrcamento : IJob
-{
+{  
+
     public void Execute(IJobExecutionContext context)
     {
 
         try
         {
-            //Orcamento.PostCancellStatus();
+            Transacao.Instance.Recarregar();
+            IList<FormaDePagamento> formas = FormaDePagamento.ConsultarTodos();
+
+
+
+
         }
         catch (Exception ex)
         {

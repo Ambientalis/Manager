@@ -228,11 +228,11 @@
                             <div>
                                 <div class="label_form">
                                     Tipo Pagamento<span>*:</span>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator25" runat="server" ControlToValidate="ddlTipoPagamento" InitialValue="0" CssClass="RequireFieldValidator"
-                                        ErrorMessage="- Tipo" ValidationGroup="vlgPedido">*obrigatório!</asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator25" runat="server" ControlToValidate="ddlFormasPagamento" InitialValue="0" CssClass="RequireFieldValidator"
+                                        ErrorMessage="- Tipo" ValidationGroup="vlgFormasPagamento">*obrigatório!</asp:RequiredFieldValidator>
                                 </div>
                                 <div class="campo_form">
-                                    <asp:DropDownList ID="DropDownList1" CssClass="dropDownList100" runat="server">
+                                    <asp:DropDownList ID="ddlFormasPagamento" CssClass="dropDownList100" runat="server">
                                     </asp:DropDownList>
                                 </div>
                             </div>

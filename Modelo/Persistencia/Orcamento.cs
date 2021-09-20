@@ -224,7 +224,7 @@ namespace Modelo
         {
             try
             {
-                String sql = $"update  FROM [ambientalis].[dbo].[orcamentos] set  status ='Arquivar'  where status = 'Cancelado'";
+                String sql = $"update  [ambientalis].[dbo].[orcamentos] set  status ='Arquivar'  where status = 'Cancelado'";
                 FabricaDAONHibernateBase fabrica = new FabricaDAONHibernateBase();
                 fabrica.GetDAOBase().ExecutarComandoSql(sql);
             }

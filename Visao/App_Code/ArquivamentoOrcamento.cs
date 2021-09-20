@@ -2,6 +2,19 @@
 using Persistencia.Fabrica;
 using Quartz;
 using System;
+using System.Collections.Generic;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Mail;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Modelo;
+using SisWebControls;
+using Utilitarios;
+using System.Drawing;
 
 /// <summary>
 /// Descrição resumida de ArquivamentoPedido
@@ -13,7 +26,7 @@ public class ArquivamentoOrcamento : IJob
 
         try
         {
-            Orcamento.PostCancellStatus();
+            //Orcamento.PostCancellStatus();
         }
         catch (Exception ex)
         {

@@ -119,6 +119,7 @@ public partial class Pedidos_CadastroPedidos : PageBase
         this.OrcamentoCadastrar = null;
         linkOrcamento.Visible = false;
 
+        this.CarregarFormasPagamento();
         this.CarregarTiposPedidos();
         this.CarregarClientes();
         this.CarregarVendedores();
@@ -137,6 +138,21 @@ public partial class Pedidos_CadastroPedidos : PageBase
         ddlVendedor.DataBind();
 
         ddlVendedor.Items.Insert(0, new ListItem("-- Selecione --", "0"));
+    }
+
+    private void CarregarFormasPagamento()
+    {
+        ddlFormasPagamento.Items.Clear();
+
+        ddlFormasPagamento.DataValueField = "Id";
+        ddlFormasPagamento.DataTextField = "GetDescricaoFormatada";
+
+        IList<FormaDePagamento> formas = FormaDePagamento.ConsultarTodos();
+
+        ddlFormasPagamento.DataSource = formas != null ? formas : new List<FormaDePagamento>();
+        ddlFormasPagamento.DataBind();
+
+        ddlFormasPagamento.Items.Insert(0, new ListItem("-- Selecione --", "0"));
     }
 
     private void CarregarTiposPedidos()

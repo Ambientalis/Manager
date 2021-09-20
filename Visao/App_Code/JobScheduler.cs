@@ -13,20 +13,20 @@ public class JobScheduler
 
         IJobDetail jobOrcamento = JobBuilder.Create<ArquivamentoOrcamento>().Build();
 
-        IJobDetail jobPedido = JobBuilder.Create<ArquivamentoPedido>().Build();
+        //IJobDetail jobPedido = JobBuilder.Create<ArquivamentoPedido>().Build();
 
 
         ITrigger trigger = TriggerBuilder.Create()
               .WithIdentity("trigger1", "group1")
               .StartNow()
               .WithSimpleSchedule(x => x
-              .WithIntervalInSeconds(120)
+              .WithIntervalInSeconds(20)
               .RepeatForever())
               .Build();
 
 
         scheduler.ScheduleJob(jobOrcamento, trigger);
-        scheduler.ScheduleJob(jobPedido, trigger);
+        //scheduler.ScheduleJob(jobPedido, trigger);
 
     }
 

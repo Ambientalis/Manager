@@ -1,0 +1,25 @@
+<html>
+<head>
+<script type="text/javaScript">
+
+function autoRefresh(interval) {
+	setTimeout("atualizar();",interval);
+	setTimeout("atualizar2();",interval);
+}
+function atualizar() {
+location.href = '/ServicosAutomaticos/ArquivamentoOrcamento.aspx';
+}
+
+function atualizar2() {
+location.href = '/ServicosAutomaticos/ArquivamentoPedido.aspx';
+}
+
+</script>
+<title>Titulo...</title></head>
+ 
+<body onload="javascript:autoRefresh(6000);">
+ 
+<p>executará a função a cada 6 segundos...
+ 
+</body>
+</html>

@@ -4,8 +4,6 @@
 
     void Application_Start(object sender, EventArgs e)
     {
-        JobScheduler.Start();
-
         // Code that runs on application startup
 
     }
